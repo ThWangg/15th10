@@ -13,44 +13,43 @@ public class LibraryItem
         System.out.println("title: " + title);
         System.out.println("year published: " + yearPublished);
     }
+}
+class Book extends LibraryItem
+{
+    private String author;
+    private String isbn;
 
-    public class Book extends LibraryItem
+    public Book(String title, String author, String isbn, int yearPublished)
     {
-        private String author;
-        private int isbn;
-
-        public Book(String title, String author, int isbn, int yearPublished)
-        {
-            super(title, yearPublished);
-            this.author = author;
-            this.isbn = isbn;
-        }
-
-        public void getDetails()
-        {
-            super.getDetails();
-            System.out.println("author: " + author);
-            System.out.println("isbn: " + isbn);
-        }
+        super(title, yearPublished);
+        this.author = author;
+        this.isbn = isbn;
     }
 
-    public class Magazine extends LibraryItem
+    public void getDetails()
     {
-        String publisher;
-        int issueNumber;
+        super.getDetails();
+        System.out.println("author: " + author);
+        System.out.println("isbn: " + isbn);
+    }
+}
 
-        public Magazine(String title, String publisher, int issueNumber, int yearPublished)
-        {
-            super(title, yearPublished);
-            this.publisher = publisher;
-            this.issueNumber = issueNumber;
-        }
+class Magazine extends LibraryItem
+{
+    String publisher;
+    int issueNumber;
 
-        public void getDetails()
-        {
-            super.getDetails();
-            System.out.println("publisher: " + publisher);
-            System.out.println("issue number: " + issueNumber);
-        }
+    public Magazine(String title, String publisher, int issueNumber, int yearPublished)
+    {
+        super(title, yearPublished);
+        this.publisher = publisher;
+        this.issueNumber = issueNumber;
+    }
+
+    public void getDetails()
+    {
+        super.getDetails();
+        System.out.println("publisher: " + publisher);
+        System.out.println("issue number: " + issueNumber);
     }
 }
